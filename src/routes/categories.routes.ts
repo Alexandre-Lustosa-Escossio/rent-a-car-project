@@ -10,4 +10,9 @@ categoriesRoutes.post("/", (req, res) => {
   return res.status(201).json({message: 'Vehicle Succesfully Added'})
 })
 
+categoriesRoutes.get('/', (req, res) => {
+  const allCategories = categoriesRepository.list();
+  res.status(200).json({categories: allCategories})
+})
+
 export { categoriesRoutes }
